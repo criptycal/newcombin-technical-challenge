@@ -9,6 +9,8 @@ const Boletas = require('../models/boletas');
 
 router.get('/', homeController.getIndex);
 
+router.get('/listar-boletas', homeController.getListarBoletas);
+
 router.post('/registrarboleta', [
     check('codigobarra').isLength({min: 13}).withMessage('El C0DIGO de barras debe contener al menos 13 CAR-CTERES')
     .isLength({max: 13}).withMessage('El C-DIGO de barras debe contener MAXIMO 13 CAR-CTERES')

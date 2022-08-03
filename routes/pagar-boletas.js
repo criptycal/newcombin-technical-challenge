@@ -5,6 +5,8 @@ const Boletas = require('../models/boletas');
 const {check, body} = require('express-validator');
 
 router.get('/pagar-boleta', pagarBoletasController.getPagos);
+router.get('/listar-pagos', pagarBoletasController.getListarPagos);
+
 router.post('/registrarpagoboleto',[
     check('codigobarrapago').isLength({min: 13}).withMessage('El C0DIGO de barras debe contener al menos 13 CAR-CTERES')
     .isLength({max: 13}).withMessage('El C0DIGO de barras debe contener M4XIMO 13 CAR4CTERES')
@@ -18,5 +20,6 @@ router.post('/registrarpagoboleto',[
         }
     )
 ], pagarBoletasController.postPagarBoletas);
+
 
 module.exports = router;

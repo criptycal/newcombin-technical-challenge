@@ -11,6 +11,25 @@ exports.getIndex = (req, res, next) => {
     })
 }
 
+//sin filtro
+exports.getListarBoletas = (req, res, next) => {
+
+    Boletas.find()
+        .then(boletas => {
+            //console.log(boletas);
+            res.render('listarboletas', {
+                bolets: boletas,
+                pageTitle: 'Listar Boletas',
+                path: '/listarboletas'
+            })
+        })
+        .catch(err => {
+            if(err){
+                console.log(err)
+            }
+        })
+    
+}
 
 
 exports.postBoletas = (req, res, next) => {
@@ -44,14 +63,14 @@ exports.postBoletas = (req, res, next) => {
         codigobarra: codigoBarra
     })
 
-    
+
 
     return boletas.save((err, doc) => {
         if(err){
             console.log(err)
         }
         if(!err){
-            res.redirect('/')
+            res.redirect('/listar-boletas')
         }
     });
 }
