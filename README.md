@@ -1,6 +1,6 @@
 # Bienvenido/a!
 
-Soy David Salamanca y estos son los pasos para ejecutar este proyecto.
+Estos son los pasos para ejecutar este proyecto.
 
 
 # 1. Descargar o usar git clone

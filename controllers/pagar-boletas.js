@@ -24,9 +24,6 @@ exports.getListarPagos = (req, res, next) =>{
                 console.log(err)
             }
         })
-
-
-        
 }
 
 
