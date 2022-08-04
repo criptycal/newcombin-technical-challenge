@@ -1,5 +1,5 @@
-const PagarBoletas = require('../models/pagar-boletas');
-const Boletas = require('../models/boletas');
+const PagarBoletas = require('../models/transactions');
+const Boletas = require('../models/payables');
 
 const { validationResult } = require('express-validator');
 
@@ -34,6 +34,11 @@ exports.getPagos = (req, res, next) => {
         errorMessage: '',
         validationErrors: ''
     })
+}
+
+exports.postFiltrarFechas = (req, res, next) =>{
+    const dataDate = req.body.dateFlat;
+    console.log(dataDate);
 }
 
 exports.postPagarBoletas = (req, res, next) => {
@@ -78,7 +83,7 @@ exports.postPagarBoletas = (req, res, next) => {
             console.log(err)
         }
         if(!err){
-            res.redirect('/pagar-boleta')
+            res.redirect('/listar-pagos')
         }
     })
 

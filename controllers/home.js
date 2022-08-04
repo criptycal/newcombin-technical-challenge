@@ -1,7 +1,10 @@
-const Boletas = require('../models/boletas');
-const PagarBoletas = require('../models/pagar-boletas');
+const Boletas = require('../models/payables');
+const PagarBoletas = require('../models/transactions');
 
 const { validationResult } = require('express-validator');
+
+
+//*****  CREAR BOLETAS *********
 
 exports.getIndex = (req, res, next) => {
     res.render('index', {

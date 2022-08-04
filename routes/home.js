@@ -3,9 +3,9 @@ const router = express.Router();
 const homeController = require('../controllers/home');
 
 const {check, body} = require('express-validator');
-const Boletas = require('../models/boletas');
+const Boletas = require('../models/payables');
 
-
+// ************ CREAR BOLETAS *****************
 
 router.get('/', homeController.getIndex);
 
