@@ -6,25 +6,20 @@ const { validationResult } = require('express-validator');
 
 exports.getListarPagos = (req, res, next) =>{
     
-    Promise.all([
-        PagarBoletas.find(),
-        Boletas.find({estadopago: 'Pago'})
-    ]).then(([boletasPagas, boletasPagadas]) => {
-        var pagos = [...boletasPagadas, ...boletasPagas]; 
-        console.log(pagos);
-        res.render('listarpagos', {
-            pags: pagos,
-            pageTitle: 'Listar Pagos',
-            path: 'Listar Pagos',
-            
+    PagarBoletas.find()
+        .then(pagos => {
+            //console.log(pagos);
+            res.render('listarpagos', {
+                pags: pagos,
+                pageTitle: 'Listar Pagos',
+                path: '/listarpagos'
+            })
         })
-        
-    })
-    .catch(err => {
-        if(err){
-            console.log(err)
-        }
-    })
+        .catch(err => {
+            if(err){
+                console.log(err)
+            }
+        })
 
 
         
@@ -60,6 +55,14 @@ exports.postPagarBoletas = (req, res, next) => {
         });
 
     }
+
+    Boletas.findOneAndUpdate({codigobarra: codigoBarraPago}, {estadopago: 'Pago'}, (err, data) => {
+        if(err){
+            console.log(err)
+        }else{
+            console.log(data)
+        }
+    })
 
     const pagarBoletas = new PagarBoletas({
         metodopago: metodoPago,

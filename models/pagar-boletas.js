@@ -14,7 +14,8 @@ const PagarBoletasSchema = new mongoose.Schema({
     },
     codigobarrapago: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     fechapago: {
         type: Date,

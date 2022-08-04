@@ -1,4 +1,5 @@
 const Boletas = require('../models/boletas');
+const PagarBoletas = require('../models/pagar-boletas');
 
 const { validationResult } = require('express-validator');
 
@@ -100,6 +101,21 @@ exports.postBoletas = (req, res, next) => {
             errorMessage: errors.array()[0].msg,
             validationErrors: errors.array()
         })
+    }
+
+    if (estadoPago === 'Pago'){
+            const pagarBoletas = new PagarBoletas({
+                metodopago: 'Indefinido',
+                importepago: 0,
+                codigobarrapago: codigoBarra,
+                fechapago: fechaVencimiento
+            });
+            pagarBoletas.save((err, doc) => {
+                if(err){
+                    console.log('error generado al momento de insertar un pago de boleta')
+                    console.log(err)
+                }
+            })
     }
 
     const boletas = new Boletas({
