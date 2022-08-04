@@ -30,7 +30,7 @@ No alcance a completar el cuarto punto, pero me gustaría mucho saber como se te
 
 ## Eso es todo
 
-El proyecto estará listo para ser ejecutado desde una base de datos en MongoDB
+El proyecto estará listo para ser ejecutado desde una base de datos en MongoDB, por cierto se llama test
 
 
 ## Agradecimientos

@@ -6,6 +6,7 @@ const {check, body} = require('express-validator');
 
 router.get('/pagar-boleta', pagarBoletasController.getPagos);
 router.get('/listar-pagos', pagarBoletasController.getListarPagos);
+router.get('/listarpagosfiltrados', pagarBoletasController.getFiltrarFechas);
 router.post('/filtrarFechasPagos', pagarBoletasController.postFiltrarFechas);
 
 router.post('/registrarpagoboleto',[

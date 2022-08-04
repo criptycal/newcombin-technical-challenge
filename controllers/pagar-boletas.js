@@ -3,6 +3,7 @@ const Boletas = require('../models/payables');
 
 const { validationResult } = require('express-validator');
 
+const dateRangeArray = [];
 
 exports.getListarPagos = (req, res, next) =>{
     
@@ -40,9 +41,43 @@ exports.getPagos = (req, res, next) => {
     })
 }
 
+//filtrando fechas
 exports.postFiltrarFechas = (req, res, next) =>{
     const dataDate = req.body.dateFlat;
-    console.log(dataDate);
+    const dateRangeArray = dataDate.split(' ');
+    //console.log(dateRangeArray[0])
+    //console.log(dateRangeArray[2])
+    PagarBoletas.find({
+        day: {
+            $gte: new Date(dateRangeArray[0]),
+            $lt: new Date(dateRangeArray[2])
+        }
+    })
+    .then(pagos => {
+        //console.log(pagos)
+        const sumall = pagos.map(item => item.importepago).reduce((prev, curr) => prev + curr, 0);
+        res.render('listarpagos', {
+            pags: pagos,
+            pageTitle: 'Filtrar Fechas',
+            path: '/listarpagos',
+            importeAcomulado: sumall
+        })
+    })
+    .catch(err => {
+        if(err){
+            console.log(err)
+        }
+        if(!err){
+            res.redirect('/listarpagosfiltrados')
+        }
+    })
+   
+}
+
+
+
+exports.getFiltrarFechas = (req, res, next) => {
+    // :)
 }
 
 exports.postPagarBoletas = (req, res, next) => {
