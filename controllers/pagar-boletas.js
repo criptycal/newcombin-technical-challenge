@@ -8,12 +8,16 @@ exports.getListarPagos = (req, res, next) =>{
     
     PagarBoletas.find()
         .then(pagos => {
+            const sumall = pagos.map(item => item.importepago).reduce((prev, curr) => prev + curr, 0);
             //console.log(pagos);
             res.render('listarpagos', {
                 pags: pagos,
                 pageTitle: 'Listar Pagos',
-                path: '/listarpagos'
+                path: '/listarpagos',
+                importeAcomulado: sumall
             })
+
+            
         })
         .catch(err => {
             if(err){
