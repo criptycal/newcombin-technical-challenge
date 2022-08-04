@@ -5,21 +5,32 @@ const { validationResult } = require('express-validator');
 
 
 exports.getListarPagos = (req, res, next) =>{
-    PagarBoletas.find()
-        .then(pagos => {
-            console.log(pagos);
-            res.render('listarpagos', {
-                pags: pagos,
-                pageTitle: 'Listar Pagos',
-                path: '/listar-pagos'
-            })
+    
+    Promise.all([
+        PagarBoletas.find(),
+        Boletas.find({estadopago: 'Pago'})
+    ]).then(([boletasPagas, boletasPagadas]) => {
+        var pagos = [...boletasPagadas, ...boletasPagas]; 
+        console.log(pagos);
+        res.render('listarpagos', {
+            pags: pagos,
+            pageTitle: 'Listar Pagos',
+            path: 'Listar Pagos',
+            
         })
-        .catch(err => {
-            if(err){
-                console.log(err)
-            }
-        })
+        
+    })
+    .catch(err => {
+        if(err){
+            console.log(err)
+        }
+    })
+
+
+        
 }
+
+
 
 exports.getPagos = (req, res, next) => {
     res.render('pagarboleta', {

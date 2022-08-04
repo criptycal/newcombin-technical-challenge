@@ -11,6 +11,54 @@ exports.getIndex = (req, res, next) => {
     })
 }
 
+//filtro servicio de telefono
+exports.getServicioTelefono = (req, res, next) => {
+    Boletas.find({servicio: 'Telefono'})
+    .then(boletas => {
+        res.render('listarboletas', {
+            bolets: boletas,
+            pageTitle: 'Listar Servicio Internet',
+            path:'/listar-servicio-internet'
+        })
+    })
+}
+
+//filtro servicio internet
+exports.getServicioInternet = (req, res, next) => {
+    Boletas.find({servicio: 'Internet'})
+    .then(boletas => {
+        res.render('listarboletas', {
+            bolets: boletas,
+            pageTitle: 'Listar Servicio Internet',
+            path:'/listar-servicio-internet'
+        })
+    })
+}
+
+//filtro servicio luz
+exports.getListarServicioLuz = (req, res, next) => {
+    Boletas.find({servicio: 'Luz'})
+    .then(boletas => {
+        res.render('listarboletas', {
+            bolets: boletas,
+            pageTitle: 'Listar Servicio Luz',
+            path:'/listar-servicio-luz'
+        })
+    })
+}
+
+//filtro servicio gas
+exports.getListarGas = (req, res, next) => {
+    Boletas.find({servicio: 'Gas'})
+    .then(boletas => {
+        res.render('listarboletas', {
+            bolets: boletas,
+            pageTitle: 'Listar Servicio Gas',
+            path:'/listar-servicio-gas'
+        })
+    })
+}
+
 //sin filtro
 exports.getListarBoletas = (req, res, next) => {
 
@@ -35,12 +83,12 @@ exports.getListarBoletas = (req, res, next) => {
 exports.postBoletas = (req, res, next) => {
     
     const tipoServicio = req.body.servicio;
-    console.log(tipoServicio);
+    //console.log(tipoServicio);
     const descripcionServicio = req.body.descripcion;
     const fechaVencimiento = req.body.fechavencimiento;
     const importeServicio = req.body.importeservicio;
     const estadoPago = req.body.estadopago;
-    console.log(estadoPago);
+    //console.log(estadoPago);
     const codigoBarra = req.body.codigobarra;
     
     const errors = validationResult(req);
