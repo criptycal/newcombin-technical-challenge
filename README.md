@@ -25,7 +25,7 @@ el codigo de barras es EAN-13 por lo tanto debe tener 13 digitos
 
 ## Punto Faltante
 
-No alcance a completar el cuarto punto, pero me gustaría mucho saber como se termina, también me interesa mucho saber como formatear la fecha debido a que no pude desde EJS...
+No alcance a completar el cuarto punto, pero me gustaría mucho saber como se termina...
 
 
 ## Eso es todo

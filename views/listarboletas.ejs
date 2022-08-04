@@ -52,7 +52,11 @@
                               <% } %> 
                               
                               <h5 class="card-title">Código de Barras: <strong><%= boleta.codigobarra %></strong></h5>
-                              <p class="card-text">Fecha de Vencimiento: <Strong> <%= boleta.fechavencimiento %>  </Strong></p>
+                              <p class="card-text">Fecha de Vencimiento: <Strong> <%= new Date(boleta.fechavencimiento).toLocaleDateString('en-us', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            }) %>  </Strong></p>
                               <p class="card-text">Importe del Servicio: <Strong><%= boleta.importeservicio %> </Strong></p>
                         
                             </div>

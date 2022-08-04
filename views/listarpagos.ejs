@@ -54,7 +54,11 @@
                         <div class="col">
                           <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Fecha de Pago: <strong><%= pago.fechapago %></strong></h5>
+                              <h5 class="card-title">Fecha de Pago: <strong><%= new Date(pago.fechapago).toLocaleDateString('en-us', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })  %></strong></h5>
                               <h5 class="card-title">Importe Acomulado: <strong><%= pago.importepago %></strong></h5>
                             </div>
                           </div>
