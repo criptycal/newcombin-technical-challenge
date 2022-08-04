@@ -23,10 +23,6 @@ Ingresa a la siguiente dirección en tu navegador: http://localhost:3000/
 
 el codigo de barras es EAN-13 por lo tanto debe tener 13 digitos
 
-## Punto Faltante
-
-No alcance a completar el cuarto punto, pero me gustaría mucho saber como se termina...
-
 
 ## Eso es todo
 
@@ -38,4 +34,5 @@ El proyecto estará listo para ser ejecutado desde una base de datos en MongoDB,
 El reto estuvo muy bueno, gracias de antemano
 
 
-
+## Desafio completado
+Quedo atento a cualquier inquietud, comentario o sugerencia
