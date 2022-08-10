@@ -6,7 +6,7 @@ Created with MongoDB, Express, Vue.js, NodeJS y TypeScript.
 Download the project or clone it with git
 
 ```bash
-git bash
+# git bash
 git clone https://github.com/criptycal/newcombin-technical-challenge.git
 
 ```
