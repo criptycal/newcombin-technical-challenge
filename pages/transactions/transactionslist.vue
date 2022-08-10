@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    Page: foo
+    <TransactionList />
   </div>
 </template>
 
