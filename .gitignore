@@ -6,7 +6,3 @@ node_modules
 .output
 .env
 dist
-
-.env*
-!.env.project
-!.env.vault

@@ -1,25 +1,6 @@
-# NewCombin Technical Challenge
-Created with MongoDB, Express, Vue.js, NodeJS y TypeScript.
+# Nuxt 3 Minimal Starter
 
-## Download or git clone
-
-Download the project or clone it with git
-
-```bash
-# git bash
-git clone https://github.com/criptycal/newcombin-technical-challenge.git
-
-```
-
-## ENV VARIABLE (IMPORTANT)
-
-In the root folder create a file named .env, and paste inside this ENV VARIABLE
-
-```bash
-# database env variable
-PASS=NewCombinPass
-
-```
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
 
