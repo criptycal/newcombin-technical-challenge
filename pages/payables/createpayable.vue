@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    Page: foo
+    <PayableForm />
   </div>
 </template>
 
