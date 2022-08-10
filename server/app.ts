@@ -24,7 +24,8 @@ app.get('/test', (req: any, res: any) => {
 */
 
 app.listen(8080, () => {
-    console.log('listening on port 8080');
+    console.log('server listening on port 8080');
+    console.log('client server listening on port 3000');
 });
 
 
