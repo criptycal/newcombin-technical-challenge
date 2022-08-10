@@ -2,6 +2,15 @@
 
 This project was created with: MongoDB, Express, Vue JS, Node JS y TypeScript.
 
+## Download the project
+
+Download the project with git clone or from the github graphic interface
+
+```bash
+# Git Bash
+git clone https://github.com/criptycal/newcombin-technical-challenge.git
+
+```
 
 ## Setup
 
