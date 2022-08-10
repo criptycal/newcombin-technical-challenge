@@ -1,6 +1,7 @@
-# Nuxt 3 Minimal Starter
+# NewCombin Technical Challenge
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+This project was created with: MongoDB, Express, Vue JS, Node JS y TypeScript.
+
 
 ## Setup
 
@@ -15,6 +16,15 @@ npm install
 
 # pnpm
 pnpm install --shamefully-hoist
+```
+
+## Database Configuration (Important)
+
+In the root folder create a file, name it __.env__ and inside paste this enviroment variable
+
+```bash
+# MongoDB Password
+PASS=NewCombinPass
 ```
 
 ## Development Server
