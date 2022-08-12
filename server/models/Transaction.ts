@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Payable from './Payable';
 
 const transactionSchema = new mongoose.Schema({
     paymentMethod: {

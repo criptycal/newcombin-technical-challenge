@@ -13,15 +13,16 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
+
 //routes
 app.use('/api', payableApi);
 app.use('/api', transactionApi);
-/*
+
 app.get('/test', (req: any, res: any) => {
     console.log('test');
     res.send('test');
 });
-*/
+
 
 app.listen(8080, () => {
     console.log('server listening on port 8080');
