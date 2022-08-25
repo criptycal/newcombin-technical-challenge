@@ -17,6 +17,9 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' },
                 { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css' }
             ],
+            css: [
+                {src: '~/assets/css/app.scss',  lang: 'scss'}
+            ]
             
         }
     }

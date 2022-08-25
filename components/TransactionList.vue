@@ -148,7 +148,7 @@
       </div>
 </template>
 
-<style scoped setup lang="scss">
+<style scoped>
  
 
 </style>
