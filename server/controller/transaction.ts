@@ -1,5 +1,5 @@
 //model
-import Transaction from '../models/transaction';
+import Transaction from '../models/Transaction';
 
 /*
     @route   POST api/transactions
